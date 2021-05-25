@@ -57,6 +57,14 @@ services:
     depends_on:
       - cardano-node
       - postgres
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 8G
+        reservations:
+          cpus: '0.25'
+          memory: 5G
     secrets:
       - postgres_password
       - postgres_user
